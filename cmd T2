@@ -1,0 +1,3 @@
+cd ~/clearpath
+source /opt/ros/humble/setup.bash
+python3 ./husky_terminal_commander.py
