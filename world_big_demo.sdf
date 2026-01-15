@@ -1,0 +1,551 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.7">
+  <world name="world_big_demo">
+
+  <scene>
+    <ambient>0.8 0.8 0.8 1</ambient>
+    <background>0.95 0.95 0.98 1</background>
+  </scene>
+
+  <light name="sun_like" type="directional">
+    <pose>0 0 10 0 0 0</pose>
+    <diffuse>1 1 1 1</diffuse>
+    <specular>0.2 0.2 0.2 1</specular>
+    <direction>-0.5 0.2 -1</direction>
+    <cast_shadows>true</cast_shadows>
+  </light>
+
+  <model name="ground">
+    <static>true</static>
+    <pose>0 0 0 0 0 0</pose>
+    <link name="ground_link">
+      <collision name="ground_collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>50.0 50.0</size>
+          </plane>
+        </geometry>
+      </collision>
+      <visual name="ground_visual">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>50.0 50.0</size>
+          </plane>
+        </geometry>
+        <material>
+          <ambient>0.85 0.85 0.85 1</ambient>
+          <diffuse>0.85 0.85 0.85 1</diffuse>
+          <specular>0.05 0.05 0.05 1</specular>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+    <model name="zone_red">
+      <static>true</static>
+      <pose>10 10 0.01 0 0 0</pose>
+      <link name="zone_red_link">
+        <visual name="zone_red_visual">
+          <geometry><box><size>6.0 6.0 0.02</size></box></geometry>
+
+          <material>
+            <ambient>1.0 0.1 0.1 1.0</ambient>
+            <diffuse>1.0 0.1 0.1 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.2 0.020000000000000004 0.020000000000000004 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="zone_blue">
+      <static>true</static>
+      <pose>-10 10 0.01 0 0 0</pose>
+      <link name="zone_blue_link">
+        <visual name="zone_blue_visual">
+          <geometry><box><size>6.0 6.0 0.02</size></box></geometry>
+
+          <material>
+            <ambient>0.1 0.3 1.0 1.0</ambient>
+            <diffuse>0.1 0.3 1.0 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.020000000000000004 0.06 0.2 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="zone_green">
+      <static>true</static>
+      <pose>-10 -10 0.01 0 0 0</pose>
+      <link name="zone_green_link">
+        <visual name="zone_green_visual">
+          <geometry><box><size>6.0 6.0 0.02</size></box></geometry>
+
+          <material>
+            <ambient>0.1 1.0 0.2 1.0</ambient>
+            <diffuse>0.1 1.0 0.2 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.020000000000000004 0.2 0.04000000000000001 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="zone_yellow">
+      <static>true</static>
+      <pose>10 -10 0.01 0 0 0</pose>
+      <link name="zone_yellow_link">
+        <visual name="zone_yellow_visual">
+          <geometry><box><size>6.0 6.0 0.02</size></box></geometry>
+
+          <material>
+            <ambient>1.0 1.0 0.1 1.0</ambient>
+            <diffuse>1.0 1.0 0.1 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.2 0.2 0.020000000000000004 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="wall_1">
+      <static>true</static>
+      <pose>4.0 0.0 0.5 0 0 0</pose>
+      <link name="wall_1_link">
+      <collision name="wall_1_collision">
+        <geometry><box><size>3.5 0.25 1.0</size></box></geometry>
+      </collision>
+        <visual name="wall_1_visual">
+          <geometry><box><size>3.5 0.25 1.0</size></box></geometry>
+
+          <material>
+            <ambient>0.35 0.35 0.38 1.0</ambient>
+            <diffuse>0.35 0.35 0.38 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.06999999999999999 0.06999999999999999 0.07600000000000001 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="wall_2">
+      <static>true</static>
+      <pose>-4.0 0.0 0.5 0 0 0</pose>
+      <link name="wall_2_link">
+      <collision name="wall_2_collision">
+        <geometry><box><size>3.5 0.25 1.0</size></box></geometry>
+      </collision>
+        <visual name="wall_2_visual">
+          <geometry><box><size>3.5 0.25 1.0</size></box></geometry>
+
+          <material>
+            <ambient>0.35 0.35 0.38 1.0</ambient>
+            <diffuse>0.35 0.35 0.38 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.06999999999999999 0.06999999999999999 0.07600000000000001 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="wall_3">
+      <static>true</static>
+      <pose>0.0 4.0 0.5 0 0 0</pose>
+      <link name="wall_3_link">
+      <collision name="wall_3_collision">
+        <geometry><box><size>0.25 3.5 1.0</size></box></geometry>
+      </collision>
+        <visual name="wall_3_visual">
+          <geometry><box><size>0.25 3.5 1.0</size></box></geometry>
+
+          <material>
+            <ambient>0.35 0.35 0.38 1.0</ambient>
+            <diffuse>0.35 0.35 0.38 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.06999999999999999 0.06999999999999999 0.07600000000000001 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="wall_4">
+      <static>true</static>
+      <pose>0.0 -4.0 0.5 0 0 0</pose>
+      <link name="wall_4_link">
+      <collision name="wall_4_collision">
+        <geometry><box><size>0.25 3.5 1.0</size></box></geometry>
+      </collision>
+        <visual name="wall_4_visual">
+          <geometry><box><size>0.25 3.5 1.0</size></box></geometry>
+
+          <material>
+            <ambient>0.35 0.35 0.38 1.0</ambient>
+            <diffuse>0.35 0.35 0.38 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.06999999999999999 0.06999999999999999 0.07600000000000001 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="pillar_1">
+      <static>true</static>
+      <pose>6.0 6.0 0.7 0 0 0</pose>
+      <link name="pillar_1_link">
+        <collision name="pillar_1_collision">
+          <geometry><cylinder><radius>0.35</radius><length>1.4</length></cylinder></geometry>
+        </collision>
+        <visual name="pillar_1_visual">
+          <geometry><cylinder><radius>0.35</radius><length>1.4</length></cylinder></geometry>
+
+          <material>
+            <ambient>0.25 0.25 0.28 1.0</ambient>
+            <diffuse>0.25 0.25 0.28 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.05 0.05 0.05600000000000001 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="pillar_2">
+      <static>true</static>
+      <pose>-6.0 6.0 0.7 0 0 0</pose>
+      <link name="pillar_2_link">
+        <collision name="pillar_2_collision">
+          <geometry><cylinder><radius>0.35</radius><length>1.4</length></cylinder></geometry>
+        </collision>
+        <visual name="pillar_2_visual">
+          <geometry><cylinder><radius>0.35</radius><length>1.4</length></cylinder></geometry>
+
+          <material>
+            <ambient>0.25 0.25 0.28 1.0</ambient>
+            <diffuse>0.25 0.25 0.28 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.05 0.05 0.05600000000000001 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="pillar_3">
+      <static>true</static>
+      <pose>6.0 -6.0 0.7 0 0 0</pose>
+      <link name="pillar_3_link">
+        <collision name="pillar_3_collision">
+          <geometry><cylinder><radius>0.35</radius><length>1.4</length></cylinder></geometry>
+        </collision>
+        <visual name="pillar_3_visual">
+          <geometry><cylinder><radius>0.35</radius><length>1.4</length></cylinder></geometry>
+
+          <material>
+            <ambient>0.25 0.25 0.28 1.0</ambient>
+            <diffuse>0.25 0.25 0.28 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.05 0.05 0.05600000000000001 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="pillar_4">
+      <static>true</static>
+      <pose>-6.0 -6.0 0.7 0 0 0</pose>
+      <link name="pillar_4_link">
+        <collision name="pillar_4_collision">
+          <geometry><cylinder><radius>0.35</radius><length>1.4</length></cylinder></geometry>
+        </collision>
+        <visual name="pillar_4_visual">
+          <geometry><cylinder><radius>0.35</radius><length>1.4</length></cylinder></geometry>
+
+          <material>
+            <ambient>0.25 0.25 0.28 1.0</ambient>
+            <diffuse>0.25 0.25 0.28 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.05 0.05 0.05600000000000001 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="cone_1">
+      <static>true</static>
+      <pose>12.0 0.0 0.18 0 0 0</pose>
+      <link name="cone_1_link">
+        <collision name="cone_1_collision">
+          <geometry>
+  <cylinder>
+    <radius>0.22</radius>
+    <length>0.36</length>
+  </cylinder>
+</geometry>
+        </collision>
+        <visual name="cone_1_visual">
+          <geometry>
+  <cylinder>
+    <radius>0.22</radius>
+    <length>0.36</length>
+  </cylinder>
+</geometry>
+
+          <material>
+            <ambient>1.0 0.45 0.05 1.0</ambient>
+            <diffuse>1.0 0.45 0.05 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.2 0.09000000000000001 0.010000000000000002 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="cone_2">
+      <static>true</static>
+      <pose>-12.0 0.0 0.18 0 0 0</pose>
+      <link name="cone_2_link">
+        <collision name="cone_2_collision">
+          <geometry>
+  <cylinder>
+    <radius>0.22</radius>
+    <length>0.36</length>
+  </cylinder>
+</geometry>
+        </collision>
+        <visual name="cone_2_visual">
+          <geometry>
+  <cylinder>
+    <radius>0.22</radius>
+    <length>0.36</length>
+  </cylinder>
+</geometry>
+
+          <material>
+            <ambient>1.0 0.45 0.05 1.0</ambient>
+            <diffuse>1.0 0.45 0.05 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.2 0.09000000000000001 0.010000000000000002 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="cone_3">
+      <static>true</static>
+      <pose>0.0 9.0 0.18 0 0 0</pose>
+      <link name="cone_3_link">
+        <collision name="cone_3_collision">
+          <geometry>
+  <cylinder>
+    <radius>0.22</radius>
+    <length>0.36</length>
+  </cylinder>
+</geometry>
+        </collision>
+        <visual name="cone_3_visual">
+          <geometry>
+  <cylinder>
+    <radius>0.22</radius>
+    <length>0.36</length>
+  </cylinder>
+</geometry>
+
+          <material>
+            <ambient>1.0 0.45 0.05 1.0</ambient>
+            <diffuse>1.0 0.45 0.05 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.2 0.09000000000000001 0.010000000000000002 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="cone_4">
+      <static>true</static>
+      <pose>0.0 -9.0 0.18 0 0 0</pose>
+      <link name="cone_4_link">
+        <collision name="cone_4_collision">
+          <geometry>
+  <cylinder>
+    <radius>0.22</radius>
+    <length>0.36</length>
+  </cylinder>
+</geometry>
+        </collision>
+        <visual name="cone_4_visual">
+          <geometry>
+  <cylinder>
+    <radius>0.22</radius>
+    <length>0.36</length>
+  </cylinder>
+</geometry>
+
+          <material>
+            <ambient>1.0 0.45 0.05 1.0</ambient>
+            <diffuse>1.0 0.45 0.05 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.2 0.09000000000000001 0.010000000000000002 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="cone_5">
+      <static>true</static>
+      <pose>14.0 4.0 0.18 0 0 0</pose>
+      <link name="cone_5_link">
+        <collision name="cone_5_collision">
+          <geometry>
+  <cylinder>
+    <radius>0.22</radius>
+    <length>0.36</length>
+  </cylinder>
+</geometry>
+        </collision>
+        <visual name="cone_5_visual">
+          <geometry>
+  <cylinder>
+    <radius>0.22</radius>
+    <length>0.36</length>
+  </cylinder>
+</geometry>
+
+          <material>
+            <ambient>1.0 0.45 0.05 1.0</ambient>
+            <diffuse>1.0 0.45 0.05 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.2 0.09000000000000001 0.010000000000000002 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="cone_6">
+      <static>true</static>
+      <pose>-14.0 -4.0 0.18 0 0 0</pose>
+      <link name="cone_6_link">
+        <collision name="cone_6_collision">
+          <geometry>
+  <cylinder>
+    <radius>0.22</radius>
+    <length>0.36</length>
+  </cylinder>
+</geometry>
+        </collision>
+        <visual name="cone_6_visual">
+          <geometry>
+  <cylinder>
+    <radius>0.22</radius>
+    <length>0.36</length>
+  </cylinder>
+</geometry>
+
+          <material>
+            <ambient>1.0 0.45 0.05 1.0</ambient>
+            <diffuse>1.0 0.45 0.05 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.2 0.09000000000000001 0.010000000000000002 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="object1">
+      <static>true</static>
+      <pose>8.0 -6.0 0.225 0 0 0</pose>
+      <link name="object1_link">
+      <collision name="object1_collision">
+        <geometry><box><size>0.7 0.45 0.45</size></box></geometry>
+      </collision>
+        <visual name="object1_visual">
+          <geometry><box><size>0.7 0.45 0.45</size></box></geometry>
+
+          <material>
+            <ambient>0.0 0.0 0.0 1.0</ambient>
+            <diffuse>0.0 0.0 0.0 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.0 0.0 0.0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="object2">
+      <static>true</static>
+      <pose>-9.0 -7.0 0.225 0 0 0</pose>
+      <link name="object2_link">
+      <collision name="object2_collision">
+        <geometry><box><size>0.7 0.45 0.45</size></box></geometry>
+      </collision>
+        <visual name="object2_visual">
+          <geometry><box><size>0.7 0.45 0.45</size></box></geometry>
+
+          <material>
+            <ambient>0.0 0.0 0.0 1.0</ambient>
+            <diffuse>0.0 0.0 0.0 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.0 0.0 0.0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="object3">
+      <static>true</static>
+      <pose>10.0 7.0 0.225 0 0 0</pose>
+      <link name="object3_link">
+      <collision name="object3_collision">
+        <geometry><box><size>0.7 0.45 0.45</size></box></geometry>
+      </collision>
+        <visual name="object3_visual">
+          <geometry><box><size>0.7 0.45 0.45</size></box></geometry>
+
+          <material>
+            <ambient>0.0 0.0 0.0 1.0</ambient>
+            <diffuse>0.0 0.0 0.0 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.0 0.0 0.0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="object4">
+      <static>true</static>
+      <pose>-8.0 8.0 0.225 0 0 0</pose>
+      <link name="object4_link">
+      <collision name="object4_collision">
+        <geometry><box><size>0.7 0.45 0.45</size></box></geometry>
+      </collision>
+        <visual name="object4_visual">
+          <geometry><box><size>0.7 0.45 0.45</size></box></geometry>
+
+          <material>
+            <ambient>0.0 0.0 0.0 1.0</ambient>
+            <diffuse>0.0 0.0 0.0 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.0 0.0 0.0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="object5">
+      <static>true</static>
+      <pose>0.0 -12.0 0.225 0 0 0</pose>
+      <link name="object5_link">
+      <collision name="object5_collision">
+        <geometry><box><size>0.7 0.45 0.45</size></box></geometry>
+      </collision>
+        <visual name="object5_visual">
+          <geometry><box><size>0.7 0.45 0.45</size></box></geometry>
+
+          <material>
+            <ambient>0.0 0.0 0.0 1.0</ambient>
+            <diffuse>0.0 0.0 0.0 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.0 0.0 0.0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="object6">
+      <static>true</static>
+      <pose>0.0 12.0 0.225 0 0 0</pose>
+      <link name="object6_link">
+      <collision name="object6_collision">
+        <geometry><box><size>0.7 0.45 0.45</size></box></geometry>
+      </collision>
+        <visual name="object6_visual">
+          <geometry><box><size>0.7 0.45 0.45</size></box></geometry>
+
+          <material>
+            <ambient>0.0 0.0 0.0 1.0</ambient>
+            <diffuse>0.0 0.0 0.0 1.0</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+            <emissive>0.0 0.0 0.0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>
