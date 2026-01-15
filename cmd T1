@@ -1,0 +1,3 @@
+cd ~/clearpath
+source /opt/ros/humble/setup.bash
+LIBGL_ALWAYS_SOFTWARE=1 ros2 launch clearpath_gz simulation.launch.py setup_path:=/home/arefin/clearpath world:=world_big_demo use_sim_time:=true
